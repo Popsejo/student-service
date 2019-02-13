@@ -15,7 +15,7 @@ public class StudentController{
     private StudentService service;
 
 
-    @GetMapping("/getStudent/{id}")
+    @GetMapping("/student/{id}")
     public Student getStudent(@PathVariable int id){
         return this.service.getStudent(id);
     }
@@ -26,7 +26,7 @@ public class StudentController{
     }
 
 
-    @GetMapping("/initStudents")
+    @GetMapping("/init")
     public List<Student> initialiseDatabase(){
         this.service.fillDatabase();
         return this.service.getAllStudents();
